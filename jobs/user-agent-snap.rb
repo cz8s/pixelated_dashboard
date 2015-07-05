@@ -10,7 +10,7 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
       name = p.attribute('name').value.split(' ').last
       status = p.attribute('lastBuildStatus')
       activity = p.attribute('activity')
-      steps[name] =  { label: name, value: status}
+      steps[name] =  { label: name, status: status}
     end
     send_event('user-agent', { items: steps.values })
   end
