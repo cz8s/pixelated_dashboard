@@ -1,12 +1,17 @@
 <% content_for :title do %>Pixelated Dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="user-agent" data-unordered="true" data-view="Ccmenu" data-title="User-Agent Snap" data-text="The snap-ci pipeline for the user-agent." </div>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+       <div data-id="count" data-view="Number" data-title="Steps"></div>
     </li>
-    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="dispatcher" data-unordered="true" data-view="Ccmenu" data-title="Dispatcher Snap" data-text="The snap-ci pipeline for the dispatcher." </div>
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="1">
+       <div data-id="failed" data-view="Text" data-title="Failed Steps"></div>
     </li>
-
+    <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+       <div data-id="numfailed" data-view="Number" data-title="Failed Steps"></div>
+    </li>
+    <li data-row="2" data-col="1" data-sizex="8" data-sizey="1">
+       <div data-id="json" data-view="Ccmenu" data-title="All Steps"></div>
+    </li>
   </ul>
 </div>
