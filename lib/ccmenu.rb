@@ -47,7 +47,7 @@ class CCMenu
     case status
       when 'Failure'   then 'red'
       when 'Exception' then 'orange'
-        when 'Unknown'   then 'orange'
+      when 'Unknown'   then 'orange'
       else 'green'
     end
   end
