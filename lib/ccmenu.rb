@@ -6,6 +6,7 @@ class CCMenu
 
   def initialize(url)
     @data = Crack::XML.parse(open(url))['Projects']['Project']
+    @data=@data.select{ |i| i['name'][/^[^\:\:]*\:\:[^\:\:]*$/]}
   end
 
   def json
