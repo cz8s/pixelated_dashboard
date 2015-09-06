@@ -30,18 +30,12 @@ class CCMenu
     return list
   end
 
-  def values
-    steps = Hash.new({ value: 0 })
-    @data.each do |step|
-      name = step['name']
-      status = step['lastBuildStatus']
-      steps[name] =  { label: name, status: status}
-    end
-    return steps.values
+  def num_total
+    @data.length
   end
 
-  def count
-    @data.length
+  def num_failed
+    self.failed.length
   end
 
   def color
