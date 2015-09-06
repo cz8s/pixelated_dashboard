@@ -5,7 +5,7 @@ require 'json'
 class CCMenu
 
   def initialize(url)
-    @data = Crack::XML.parse(open(url))['Projects']['Project']
+    @data = Crack::XML.parse(open(url,http_basic_authentication: [ENV['GO_USER'],ENV['GO_PASS']],ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE))['Projects']['Project']
     @data=@data.select{ |i| i['name'][/^[^\:\:]*\:\:[^\:\:]*$/]}
   end
 
