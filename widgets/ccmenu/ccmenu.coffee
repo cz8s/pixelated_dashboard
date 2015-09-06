@@ -1,7 +1,6 @@
 class Dashing.Ccmenu extends Dashing.Widget
 
   onData: (data) ->
-    console.log data.color
     if data.color
       # clear existing "status-*" classes
       $(@get('node')).attr 'class', (i,c) ->
