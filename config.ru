@@ -1,7 +1,11 @@
 require 'dashing'
 
 configure do
-  set :auth_token, 'ii9unaveeG4tesh2cee8mee4thohx4ausu'
+  if ENV.has_key?('PIX_AUTH_TOKEN')
+    set :auth_token, ENV['PIX_AUTH_TOKEN']
+  else
+    set :auth_token, 'ie2Aex6ooLi4usi0ahngaht'
+  end
   set :default_dashboard, 'pixelated'
 
   helpers do
