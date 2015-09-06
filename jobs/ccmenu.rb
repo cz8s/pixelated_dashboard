@@ -1,9 +1,10 @@
 require './lib/ccmenu'
 
-SCHEDULER.every '60s', :first_in => 0 do |job|
+SCHEDULER.every '20s', :first_in => 0 do |job|
     go = CCMenu.new 'https://go.wazokazi.is/go/cctray.xml'
     send_event('go', {text:go.failed})
     send_event('go', {color: go.color})
+    send_event('go_count', {current: go.num_failed})
 end
 
 SCHEDULER.every '60s', :first_in => 0 do |job|
